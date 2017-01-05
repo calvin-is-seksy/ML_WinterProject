@@ -63,16 +63,7 @@ pause;
 
 %% ================ Part 3: Predict for One-Vs-All ================
 %  After ...
-
-rp = randperm(m) ; 
-
-for i = 1:m 
-    % display image 
-    fprintf('\nDisplaying Example Image\n'); 
-    displayData(X(rp(i), :)); 
-    
-    pred = predictOneVsAll(all_theta, X);
-    
+pred = predictOneVsAll(all_theta, X);
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
 

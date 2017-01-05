@@ -63,24 +63,7 @@ pause;
 
 %% ================ Part 3: Predict for One-Vs-All ================
 %  After ...
-
-rp = randperm(m) ; 
-
-for i = 1:m 
-    % display image 
-    fprintf('\nDisplaying Example Image\n'); 
-    displayData(X(rp(i), :)); 
-    
-    pred = predictOneVsAll(all_theta, X);
-    fprintf('\nOne vs All Logistic Regression Classification: %d (digit %d)\n', pred, mod(pred,10)); 
-    
-    % pause 
-    fprintf('Program paused. Press enter to continue.\n'); 
-    pause; 
-end 
-
-fprintf('Program paused. Press enter to continue.\n'); 
-pause;
+pred = predictOneVsAll(all_theta, X);
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
 
