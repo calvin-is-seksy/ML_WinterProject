@@ -1,4 +1,4 @@
-%% Machine Learning Online Class
+ %% Machine Learning Online Class
 %  Exercise 1: Linear regression with multiple variables
 %
 %  Instructions
