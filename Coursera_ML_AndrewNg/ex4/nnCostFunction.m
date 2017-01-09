@@ -73,7 +73,7 @@ h = sigmoid(z3);		% h 5000x10
 
 % convert y value from 1:num_labels to num_labelsx1 matrix with only 1 ones and other zeros
 yy = zeros(m, num_labels);
-for kk = 1:m,
+for kk = 1:m
   %yy(kk,mod(y(kk),num_labels)+1) = 1;
   yy(kk,y(kk)) = 1;
 end
