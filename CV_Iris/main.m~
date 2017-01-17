@@ -28,17 +28,6 @@ plot(petal_L, petal_W, 'rx') ;
 xlabel('Petal Length (cm)') ; 
 ylabel('Petal Width(cm)') ; 
 
-% gradient descent to fit a linear regression 
-% let x 
-fprintf('Now let us run some gradient descent:\n') 
-X = [ones(m, 1), petal_L]; % Add a column of ones to x
-theta = zeros(2, 1); % initialize fitting parameters
-
-% Some gradient descent settings
-iterations = 1500;
-alpha = 0.01;
-
-% compute and display initial cost
-computeCost(X, petal_W, theta)
-
+% gradient des
+fprint('Now let us run some gradient descent:\n')
 
