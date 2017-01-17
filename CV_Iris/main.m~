@@ -17,17 +17,43 @@ fprintf('plotting sepal length (cm) vs sepal width (cm) data\n')
 
 m = length(sepal_L) ;
 
-figure ; 
-plot(sepal_L, sepal_W, 'gx') 
+figure(1) ; 
+plot(sepal_L, sepal_W, 'bx') 
 xlabel('Sepal Length (cm)') ;
 ylabel('Sepal Width (cm)') ; 
 
-% figure ; 
-hold ; 
+% plotting data in 2D perspective -- petal length (cm) vs petal width (cm) 
+fprintf('plotting petal length (cm) vs petal width (cm) data\n')
+
+figure(2) ; 
 plot(petal_L, petal_W, 'rx') ; 
 xlabel('Petal Length (cm)') ; 
 ylabel('Petal Width(cm)') ; 
 
-% gradient des
-fprint('Now let us run some gradient descent:\n')
+% gradient descent to fit a linear regression 
+fprintf('Now let us run some gradient descent:\n') 
+X = [ones(m, 1), petal_L]; % Add a column of ones to x
+theta = zeros(2, 1); % initialize fitting parameters
+
+% Some gradient descent settings
+iterations = 1500;
+alpha = 0.01;
+
+% compute and display initial cost
+computeCost(X, petal_W, theta)
+
+% run gradient descent
+theta = gradientDescent(X, petal_W, theta, alpha, iterations)
+
+% Plot the linear fit
+hold on; 
+plot(X(:,2), X*theta, '-')
+legend('Training data', 'Linear regression')
+hold off; 
+
+% predict values for petal lengths 3 cm and 6 cm 
+predict1 = [1, 3] * theta; 
+
+
+
 
